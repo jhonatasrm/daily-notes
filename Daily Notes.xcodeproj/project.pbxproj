@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		71A631061E5F9B5A0063153E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A631051E5F9B5A0063153E /* AppDelegate.swift */; };
-		71A631081E5F9B5A0063153E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A631071E5F9B5A0063153E /* ViewController.swift */; };
+		71A631081E5F9B5A0063153E /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A631071E5F9B5A0063153E /* NoteViewController.swift */; };
 		71A6310B1E5F9B5A0063153E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71A631091E5F9B5A0063153E /* Main.storyboard */; };
 		71A6310E1E5F9B5A0063153E /* Daily_Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71A6310C1E5F9B5A0063153E /* Daily_Notes.xcdatamodeld */; };
 		71A631101E5F9B5A0063153E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A6310F1E5F9B5A0063153E /* Assets.xcassets */; };
 		71A631131E5F9B5A0063153E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71A631111E5F9B5A0063153E /* LaunchScreen.storyboard */; };
+		71A6311B1E5FCD850063153E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6311A1E5FCD850063153E /* TableViewController.swift */; };
+		71A6311D1E5FD0DB0063153E /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6311C1E5FD0DB0063153E /* DAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		71A631021E5F9B5A0063153E /* Daily Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A631051E5F9B5A0063153E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		71A631071E5F9B5A0063153E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		71A631071E5F9B5A0063153E /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		71A6310A1E5F9B5A0063153E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		71A6310D1E5F9B5A0063153E /* Daily_Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Daily_Notes.xcdatamodel; sourceTree = "<group>"; };
 		71A6310F1E5F9B5A0063153E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71A631121E5F9B5A0063153E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71A631141E5F9B5A0063153E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71A6311A1E5FCD850063153E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		71A6311C1E5FD0DB0063153E /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				71A631051E5F9B5A0063153E /* AppDelegate.swift */,
-				71A631071E5F9B5A0063153E /* ViewController.swift */,
+				71A631071E5F9B5A0063153E /* NoteViewController.swift */,
+				71A6311C1E5FD0DB0063153E /* DAO.swift */,
+				71A6311A1E5FCD850063153E /* TableViewController.swift */,
 				71A631091E5F9B5A0063153E /* Main.storyboard */,
 				71A6310F1E5F9B5A0063153E /* Assets.xcassets */,
 				71A631111E5F9B5A0063153E /* LaunchScreen.storyboard */,
@@ -141,8 +147,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				71A6310E1E5F9B5A0063153E /* Daily_Notes.xcdatamodeld in Sources */,
-				71A631081E5F9B5A0063153E /* ViewController.swift in Sources */,
+				71A631081E5F9B5A0063153E /* NoteViewController.swift in Sources */,
 				71A631061E5F9B5A0063153E /* AppDelegate.swift in Sources */,
+				71A6311B1E5FCD850063153E /* TableViewController.swift in Sources */,
+				71A6311D1E5FD0DB0063153E /* DAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +312,7 @@
 				71A631191E5F9B5A0063153E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
