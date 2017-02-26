@@ -14,7 +14,7 @@ class NoteViewController: UIViewController {
 	let note = DAO()
 	
 	@IBOutlet var textNote: UITextView!
-	var anotation: NSManagedObject!
+	var annotation: NSManagedObject!
 	
 
 	
@@ -24,8 +24,8 @@ class NoteViewController: UIViewController {
 		
 		self.textNote.becomeFirstResponder()
 		
-		if anotation != nil{
-			textNote.text = anotation.value(forKey: "text") as! String!
+		if annotation != nil{
+			textNote.text = annotation.value(forKey: "text") as! String!
 		
 		}else{
 			textNote.text = ""

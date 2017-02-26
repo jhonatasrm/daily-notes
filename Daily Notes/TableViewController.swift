@@ -45,7 +45,7 @@ class TableViewController: UITableViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "note"{
 			let noteView = segue.destination as! NoteViewController
-			noteView.anotation = sender as? NSManagedObject
+			noteView.annotation = sender as? NSManagedObject
 		}
 	}
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
