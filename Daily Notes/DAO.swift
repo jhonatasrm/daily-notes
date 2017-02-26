@@ -21,8 +21,10 @@ class DAO: UIViewController{
 	
 		let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: objectManager)
 		
+	
 		note.setValue(text, forKey: "text")
 		note.setValue(NSDate(), forKey: "date")
+
 		
 		do{
 			
@@ -57,6 +59,41 @@ class DAO: UIViewController{
 		}
 	
 	}
+	
+	func deleteNote(index: Int){
+		
+		let appDelegate = UIApplication.shared.delegate as! AppDelegate
+		let objectManager = appDelegate.persistentContainer.viewContext
+		
+		let requestForDelete = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+		
+		let place = NSPredicate(format: "id == %@", "\(index)")
+		
+		requestForDelete.predicate = place
+		
+		do{
+			let notes = try objectManager.fetch(requestForDelete)
+			
+			if notes.count > 0 {
+				for notesA in notes as! [NSManagedObject]{
+				
+				objectManager.delete(notesA)
+				
+				}
+			
+			}
+
+			try objectManager.save()
+			print("Note deleted with sucess ! \(index)")
+			
+		}catch let error as NSError{
+		
+			print("Error in delete note \(error.description)")
+		}
+		
+		
+	}
+
 
 
 }
