@@ -52,7 +52,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YgK-Q1-pfT">
                             <color key="tintColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="68q-px-QZL" kind="show" id="9ca-h4-TVU"/>
+                                <segue destination="68q-px-QZL" kind="show" identifier="note" id="9ca-h4-TVU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
