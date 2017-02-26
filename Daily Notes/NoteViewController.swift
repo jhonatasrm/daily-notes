@@ -7,29 +7,43 @@
 //
 
 import UIKit
-
+import CoreData
 
 class NoteViewController: UIViewController {
 
+	let note = DAO()
+	
 	@IBOutlet var textNote: UITextView!
+	var anotation: NSManagedObject!
+	
+
 	
 	
-	
-	override func viewDidLoad() {
+	override func viewDidLoad(){
 		super.viewDidLoad()
 		
 		self.textNote.becomeFirstResponder()
-
+		
+		if anotation != nil{
+			textNote.text = anotation.value(forKey: "text") as! String!
+		
+		}else{
+			textNote.text = ""
+		
+		}
+		
 	}
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		
 	}
+	
+
 
 	@IBAction func saveNote(_ sender: Any) {
-		let save = DAO()
-		save.saveNote(text: textNote.text)
+		
+		note.saveNote(text: textNote.text)
 		
 		_ = self.navigationController?.popToRootViewController(animated: true)
 		
