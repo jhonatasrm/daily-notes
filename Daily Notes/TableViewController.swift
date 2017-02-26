@@ -35,11 +35,33 @@ class TableViewController: UITableViewController {
         return 1
     }
 
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		let anotation = note.notesA[indexPath.row]
+		self.performSegue(withIdentifier: "note", sender: anotation)
+		
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "note"{
+			let noteView = segue.destination as! NoteViewController
+			noteView.anotation = sender as? NSManagedObject
+		}
+	}
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		
 		
         return note.notesA.count
     }
+	
+	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		
+		if editingStyle == UITableViewCellEditingStyle.delete{
+			note.deleteNote(index: indexPath.row)
+			self.tableView.reloadData()
+		
+		}
+	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
