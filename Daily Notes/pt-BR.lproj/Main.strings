@@ -1,0 +1,18 @@
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "007-Op-q2Y"; */
+"007-Op-q2Y.title" = "Salvar";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "4Zr-H6-Boz"; */
+"4Zr-H6-Boz.text" = "Título";
+
+/* Class = "UIViewController"; title = "Note"; ObjectID = "68q-px-QZL"; */
+"68q-px-QZL.title" = "Nota";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "JwY-Qg-QZK"; */
+"JwY-Qg-QZK.text" = "Subtitle";
+
+/* Class = "UINavigationItem"; title = "Daily Notes"; ObjectID = "dDL-ct-BbR"; */
+"dDL-ct-BbR.title" = "Notas Diárias";
+
+/* Class = "UINavigationItem"; title = "Note"; ObjectID = "moU-BR-GH3"; */
+"moU-BR-GH3.title" = "Nota";
