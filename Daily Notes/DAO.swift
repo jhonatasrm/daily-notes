@@ -12,7 +12,7 @@ import CoreData
 class DAO: UIViewController{
 	
 	var notesA: [NSManagedObject] = []
-
+	var noteToDelete: NSManagedObject!
 	
 	func saveNote(text: String){
 	
@@ -21,7 +21,7 @@ class DAO: UIViewController{
 	
 		let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: objectManager)
 		
-	
+
 		note.setValue(text, forKey: "text")
 		note.setValue(NSDate(), forKey: "date")
 
@@ -60,40 +60,42 @@ class DAO: UIViewController{
 	
 	}
 	
-	func deleteNote(index: Int){
+	func updateNote(text: String, annotation: NSManagedObject){
 		
 		let appDelegate = UIApplication.shared.delegate as! AppDelegate
 		let objectManager = appDelegate.persistentContainer.viewContext
 		
-		let requestForDelete = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+		annotation.setValue(text, forKey: "text")
+		annotation.setValue(NSDate(), forKey: "date")
+
+		do{
+			try objectManager.save()
+			print("Updated with sucess !")
 		
-		let place = NSPredicate(format: "id == %@", "\(index)")
+		}catch{
+			print("Fail to update data! ")
 		
-		requestForDelete.predicate = place
+		}
+	}
+	
+	func deleteNote(noteToDelete: NSManagedObject){
+	
+		let appDelegate = UIApplication.shared.delegate as! AppDelegate
+		let objectManager = appDelegate.persistentContainer.viewContext
+		
+		objectManager.delete(noteToDelete)
 		
 		do{
-			let notes = try objectManager.fetch(requestForDelete)
 			
-			if notes.count > 0 {
-				for notesA in notes as! [NSManagedObject]{
-				
-				objectManager.delete(notesA)
-				
-				}
-			
-			}
-
 			try objectManager.save()
-			print("Note deleted with sucess ! \(index)")
-			
-		}catch let error as NSError{
+			print("Note deleted with sucess !")
 		
-			print("Error in delete note \(error.description)")
+		}catch{
+			
+			print("Error in delete note !")
+		
 		}
 		
-		
+
 	}
-
-
-
 }

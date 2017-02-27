@@ -16,34 +16,41 @@ class NoteViewController: UIViewController {
 	@IBOutlet var textNote: UITextView!
 	var annotation: NSManagedObject!
 	
-
-	
-	
 	override func viewDidLoad(){
 		super.viewDidLoad()
-		
+
 		self.textNote.becomeFirstResponder()
 		
 		if annotation != nil{
+			
 			textNote.text = annotation.value(forKey: "text") as! String!
 		
 		}else{
+			
 			textNote.text = ""
 		
 		}
 		
 	}
-
+	
+	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		
 	}
 	
 
-
 	@IBAction func saveNote(_ sender: Any) {
-		
-		note.saveNote(text: textNote.text)
+
+		if annotation != nil{
+			
+			note.updateNote(text: self.textNote.text, annotation: annotation)
+			
+		}else{
+			
+			note.saveNote(text: textNote.text)
+			
+		}
 		
 		_ = self.navigationController?.popToRootViewController(animated: true)
 		

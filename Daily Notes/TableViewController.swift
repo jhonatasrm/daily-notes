@@ -21,10 +21,11 @@ class TableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+		
     }
 
 	override func viewDidAppear(_ animated: Bool) {
+		
 		note.listNote()
 		self.tableView.reloadData()
 	
@@ -36,9 +37,10 @@ class TableViewController: UITableViewController {
     }
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		
 		tableView.deselectRow(at: indexPath, animated: true)
-		let anotation = note.notesA[indexPath.row]
-		self.performSegue(withIdentifier: "note", sender: anotation)
+		let annotation = note.notesA[indexPath.row]
+		self.performSegue(withIdentifier: "note", sender: annotation)
 		
 	}
 	
@@ -57,9 +59,13 @@ class TableViewController: UITableViewController {
 	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		
 		if editingStyle == UITableViewCellEditingStyle.delete{
-			note.deleteNote(index: indexPath.row)
-			self.tableView.reloadData()
-		
+			
+			let noteToDelete = note.notesA[indexPath.row]
+			note.noteToDelete = noteToDelete
+			note.deleteNote(noteToDelete: note.noteToDelete)
+			note.notesA.remove(at: indexPath.row)
+			self.tableView.deleteRows(at: [indexPath], with:.fade)
+	
 		}
 	}
 
