@@ -47,6 +47,9 @@ class DAO: UIViewController{
 		
 		let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
 		
+		let order = NSSortDescriptor(key: "date", ascending: false)
+		request.sortDescriptors = [order]
+		
 		do{
 			
 			let notes = try objectManager.fetch(request)
