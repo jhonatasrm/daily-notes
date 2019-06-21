@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+// Class NoteViewController to Daily Notes
 class NoteViewController: UIViewController {
 
 	let note = DAO()
