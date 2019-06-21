@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+// AppDelegate to Daily Notes
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
