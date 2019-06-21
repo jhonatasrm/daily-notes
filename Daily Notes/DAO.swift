@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+// class DAO (Data Access Object)
 class DAO: UIViewController{
 	
 	var notesA: [NSManagedObject] = []
