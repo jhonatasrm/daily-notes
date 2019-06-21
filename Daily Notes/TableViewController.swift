@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-// Class TableViewController to Daily Notes
+// class TableViewController to Daily Notes
 class TableViewController: UITableViewController {
 	
 	let note = DAO()
