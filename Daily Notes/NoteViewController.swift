@@ -34,7 +34,7 @@ class NoteViewController: UIViewController {
 		
 	}
 	
-	
+	// didReceiveMemoryWarning
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		
